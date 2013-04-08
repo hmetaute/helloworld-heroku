@@ -21,10 +21,7 @@ public class HelloWorld extends HttpServlet {
 		resp.getWriter().print("Hello world, madafaka");
 	}
 
-
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 		Server server = new Server(Integer.valueOf(System.getenv("PORT")));
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
@@ -32,7 +29,7 @@ public class HelloWorld extends HttpServlet {
         server.setHandler(context);
         context.addServlet(new ServletHolder(new HelloWorld()),"/*");
         server.start();
-        server.join();   
+        server.join();
 	}
 
 }
